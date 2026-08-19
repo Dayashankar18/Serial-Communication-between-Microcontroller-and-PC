@@ -28,11 +28,29 @@ Connect the Arduino UNO to the PC using a USB cable. No external circuit is requ
 6.	Enter a message in the Serial Monitor and observe the received message.
 
 **Arduino IDE Code**
+void setup() {
+  Serial.begin(9600);
+  Serial.println("Hello from Arduino");
+}
 
+void loop() {
+  // Send data from Arduino to PC
+    // Receive data from PC
+  if (Serial.available() > 0) {
+    char receivedData = Serial.read();
+
+    Serial.print("Received: ");
+    Serial.println(receivedData);
+  }
+
+  delay(1000);
+}
 
 **Output:**
 
 Serial Monitor output
+<img width="1386" height="620" alt="image" src="https://github.com/user-attachments/assets/ead1575c-df87-4c4f-8e6b-44148daf7ff2" />
+
 
 
 **Result**
